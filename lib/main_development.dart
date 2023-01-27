@@ -10,6 +10,6 @@ Future<void> main() async {
   final todosApi = LocalStorageTodosApi(
     plugin: await SharedPreferences.getInstance(),
   );
-  
-   bootstrap(todosApi: todosApi);
+
+  await bootstrap(todosApi: todosApi);
 }

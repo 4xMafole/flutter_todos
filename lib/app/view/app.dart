@@ -29,7 +29,7 @@ class AppView extends StatelessWidget {
       darkTheme: FlutterTodosTheme.dark,
       localizationsDelegates: AppLocalizations.localizationsDelegates,
       supportedLocales: AppLocalizations.supportedLocales,
-      home: const HomePage(),
+      home: Container(),
     );
   }
 }
