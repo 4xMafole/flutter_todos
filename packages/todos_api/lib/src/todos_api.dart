@@ -1,4 +1,4 @@
-import 'models/todo.dart';
+import 'package:todos_api/src/models/todo.dart';
 
 /// {@template todos_api}
 /// The interface and models for an API providing access to tods.
@@ -17,7 +17,8 @@ abstract class TodosApi {
 
   /// Deletes the todo with the given [id].
   /// 
-  /// If no todo with the given [id] exists, a [TodoNotFoundException] error is thrown.
+  /// If no todo with the given [id] exists,
+  ///  a [TodoNotFoundException] error is thrown.
   Future<void> deleteTodo(String id);
 
   /// Deletes all completed todos.

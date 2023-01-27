@@ -16,7 +16,8 @@ part 'todo.g.dart';
 /// one will be generated.
 ///
 /// [Todo]s are immutable and can be copied using [copyWith], in addition to
-/// being serialized and deserialized using [toJson] and [fromJson] respectively.
+/// being serialized and deserialized using [toJson] 
+/// and [fromJson] respectively.
 /// {@endtemplate}
 @immutable
 @JsonSerializable()

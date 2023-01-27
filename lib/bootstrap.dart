@@ -3,10 +3,9 @@ import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_todos/app/view/app.dart';
 import 'package:todos_api/todos_api.dart';
 import 'package:todos_repository/todos_repository.dart';
-
-import 'app/view/app.dart';
 
 class AppBlocObserver extends BlocObserver {
   @override
