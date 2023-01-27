@@ -10,6 +10,11 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  meta: ^1.8.0
+  rxdart: ^0.27.7
+  shared_preferences: ^2.0.17
+  todos_api:
+    path: ../todos_api
 
 dev_dependencies:
   flutter_test:
