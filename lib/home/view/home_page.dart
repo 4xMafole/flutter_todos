@@ -3,6 +3,9 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_todos/home/cubit/home_cubit.dart';
+import 'package:flutter_todos/stats/views/views.dart';
+
+import '../../todos_overview/views/todos_overview_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
