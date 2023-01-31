@@ -24,7 +24,7 @@ class TodosOverviewBloc extends Bloc<TodosOverviewEvent, TodosOverviewState> {
 
   final TodosRepository _todosRepository;
 
-  FutureOr<void> _onSubscriptionRequested(
+  Future<void> _onSubscriptionRequested(
     TodosOverviewSubscriptionRequested event,
     Emitter<TodosOverviewState> emit,
   ) async {
@@ -42,7 +42,7 @@ class TodosOverviewBloc extends Bloc<TodosOverviewEvent, TodosOverviewState> {
     );
   }
 
-  FutureOr<void> _onTodoCompletionToggled(
+  Future<void> _onTodoCompletionToggled(
     TodosOverviewTodoCompletionToggled event,
     Emitter<TodosOverviewState> emit,
   ) async {
@@ -50,7 +50,7 @@ class TodosOverviewBloc extends Bloc<TodosOverviewEvent, TodosOverviewState> {
     await _todosRepository.saveTodo(newTodo);
   }
 
-  FutureOr<void> _onTodoDeleted(
+  Future<void> _onTodoDeleted(
     TodosOverviewTodoDeleted event,
     Emitter<TodosOverviewState> emit,
   ) async {
@@ -60,7 +60,7 @@ class TodosOverviewBloc extends Bloc<TodosOverviewEvent, TodosOverviewState> {
     await _todosRepository.deleteTodo(event.todo.id);
   }
 
-  FutureOr<void> _onUndoDeletionRequested(
+  Future<void> _onUndoDeletionRequested(
     TodosOverviewUndoDeletionRequested event,
     Emitter<TodosOverviewState> emit,
   ) async {
@@ -71,14 +71,14 @@ class TodosOverviewBloc extends Bloc<TodosOverviewEvent, TodosOverviewState> {
     await _todosRepository.saveTodo(todo);
   }
 
-  FutureOr<void> _onFilterChanged(
+  Future<void> _onFilterChanged(
     TodosOverviewFilterChanged event,
     Emitter<TodosOverviewState> emit,
   ) async {
     emit(state.copyWith(filter: () => event.filter));
   }
 
-  FutureOr<void> _onToggleAllRequested(
+  Future<void> _onToggleAllRequested(
     TodosOverviewToggleAllRequested event,
     Emitter<TodosOverviewState> emit,
   ) async {
@@ -87,7 +87,7 @@ class TodosOverviewBloc extends Bloc<TodosOverviewEvent, TodosOverviewState> {
     await _todosRepository.completeAll(isCompleted: !areAllCompleted);
   }
 
-  FutureOr<void> _onClearCompletedRequested(
+  Future<void> _onClearCompletedRequested(
     TodosOverviewClearCompletedRequested event,
     Emitter<TodosOverviewState> emit,
   ) async {

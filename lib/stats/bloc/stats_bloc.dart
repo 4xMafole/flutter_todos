@@ -16,7 +16,7 @@ class StatsBloc extends Bloc<StatsEvent, StatsState> {
 
   final TodosRepository _todosRepository;
 
-  FutureOr<void> _onSubscriptionRequested(
+  Future<void> _onSubscriptionRequested(
     StatsSubscriptionRequested event,
     Emitter<StatsState> emit,
   ) async {
