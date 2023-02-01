@@ -45,7 +45,7 @@ class StatsView extends StatelessWidget {
             ),
           ),
           ListTile(
-            key: const Key('statsView_completeTodos_listTile'),
+            key: const Key('statsView_activeTodos_listTile'),
             leading: const Icon(Icons.radio_button_unchecked_rounded),
             title: Text(l10n.statsActiveTodoCountLabel),
             trailing: Text(

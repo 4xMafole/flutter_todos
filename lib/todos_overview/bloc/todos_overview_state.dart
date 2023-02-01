@@ -1,11 +1,6 @@
 part of 'todos_overview_bloc.dart';
 
-enum TodosOverviewStatus {
-  initial,
-  loading,
-  success,
-  failure,
-}
+enum TodosOverviewStatus { initial, loading, success, failure }
 
 class TodosOverviewState extends Equatable {
   const TodosOverviewState({

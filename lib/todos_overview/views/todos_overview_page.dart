@@ -1,12 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_todos/edit_todo/view/views.dart';
+import 'package:flutter_todos/edit_todo/view/edit_todo_page.dart';
 import 'package:flutter_todos/l10n/l10n.dart';
-import 'package:flutter_todos/todos_overview/bloc/todos_overview_bloc.dart';
+import 'package:flutter_todos/todos_overview/todos_overview.dart';
+import 'package:flutter_todos/todos_overview/widgets/widgets.dart';
 import 'package:todos_repository/todos_repository.dart';
-
-import '../widgets/widgets.dart';
 
 class TodosOverviewPage extends StatelessWidget {
   const TodosOverviewPage({super.key});
@@ -28,11 +27,10 @@ class TodosOverviewView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = context.l10n;
+
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          l10n.todosOverviewAppBarTitle,
-        ),
+        title: Text(l10n.todosOverviewAppBarTitle),
         actions: const [
           TodosOverviewFilterButton(),
           TodosOverviewOptionsButton(),
@@ -49,9 +47,7 @@ class TodosOverviewView extends StatelessWidget {
                   ..hideCurrentSnackBar()
                   ..showSnackBar(
                     SnackBar(
-                      content: Text(
-                        l10n.todosOverviewErrorSnackbarText,
-                      ),
+                      content: Text(l10n.todosOverviewErrorSnackbarText),
                     ),
                   );
               }
@@ -91,9 +87,7 @@ class TodosOverviewView extends StatelessWidget {
           builder: (context, state) {
             if (state.todos.isEmpty) {
               if (state.status == TodosOverviewStatus.loading) {
-                return const Center(
-                  child: CupertinoActivityIndicator(),
-                );
+                return const Center(child: CupertinoActivityIndicator());
               } else if (state.status != TodosOverviewStatus.success) {
                 return const SizedBox();
               } else {
@@ -109,7 +103,7 @@ class TodosOverviewView extends StatelessWidget {
             return CupertinoScrollbar(
               child: ListView(
                 children: [
-                  for (final todo in state.filteredTodos) ...[
+                  for (final todo in state.filteredTodos)
                     TodoListTile(
                       todo: todo,
                       onToggleCompleted: (isCompleted) {
@@ -131,7 +125,6 @@ class TodosOverviewView extends StatelessWidget {
                         );
                       },
                     ),
-                  ]
                 ],
               ),
             );
